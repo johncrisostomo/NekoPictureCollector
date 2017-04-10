@@ -46,5 +46,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cat = cats[indexPath.row]
+        performSegue(withIdentifier: "catSegue", sender: cat)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! CatViewController
+        nextVC.cat = sender as? Cat
+    }
 }
 

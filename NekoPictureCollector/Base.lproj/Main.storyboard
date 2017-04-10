@@ -39,7 +39,7 @@
                     <navigationItem key="navigationItem" id="eZo-cW-PDH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="crJ-3u-fy3">
                             <connections>
-                                <segue destination="dZJ-28-66U" kind="show" id="piz-dF-kIs"/>
+                                <segue destination="dZJ-28-66U" kind="show" identifier="catSegue" id="piz-dF-kIs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="767" y="139"/>
         </scene>
-        <!--Game View Controller-->
+        <!--Cat View Controller-->
         <scene sceneID="3Jj-LG-Q5U">
             <objects>
-                <viewController id="dZJ-28-66U" customClass="GameViewController" customModule="NekoPictureCollector" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dZJ-28-66U" customClass="CatViewController" customModule="NekoPictureCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lsK-fF-btC"/>
                         <viewControllerLayoutGuide type="bottom" id="nYF-t8-4rj"/>
@@ -82,14 +82,24 @@
                                     <action selector="addTapped:" destination="dZJ-28-66U" eventType="touchUpInside" id="euI-pF-LxZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayO-Gp-ak2">
+                                <rect key="frame" x="165" y="418" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="dZJ-28-66U" eventType="touchUpInside" id="8dK-H1-tgr"/>
+                                    <action selector="deleteTapped:" destination="dZJ-28-66U" eventType="touchUpInside" id="jbZ-8A-AJq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="28r-6u-3i7" firstAttribute="top" secondItem="Zz3-x4-ALd" secondAttribute="bottom" constant="34" id="3Tw-0W-y11"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Zz3-x4-ALd" secondAttribute="trailing" constant="20" id="RQS-u6-fHE"/>
+                            <constraint firstItem="ayO-Gp-ak2" firstAttribute="centerX" secondItem="SdF-dr-Lhi" secondAttribute="centerX" id="fvt-do-dCE"/>
                             <constraint firstItem="emj-G0-7po" firstAttribute="centerX" secondItem="SdF-dr-Lhi" secondAttribute="centerX" id="nZb-Mo-2aQ"/>
                             <constraint firstItem="Zz3-x4-ALd" firstAttribute="centerX" secondItem="SdF-dr-Lhi" secondAttribute="centerX" id="pX5-M4-vPx"/>
                             <constraint firstItem="Zz3-x4-ALd" firstAttribute="leading" secondItem="SdF-dr-Lhi" secondAttribute="leadingMargin" constant="20" id="rI4-UY-jEc"/>
+                            <constraint firstItem="ayO-Gp-ak2" firstAttribute="top" secondItem="emj-G0-7po" secondAttribute="bottom" constant="20" id="snw-oG-ZGJ"/>
                             <constraint firstItem="Zz3-x4-ALd" firstAttribute="top" secondItem="lsK-fF-btC" secondAttribute="bottom" constant="20" id="tmv-44-bVY"/>
                             <constraint firstItem="28r-6u-3i7" firstAttribute="width" secondItem="Zz3-x4-ALd" secondAttribute="width" id="vU7-wv-Pw2"/>
                             <constraint firstItem="emj-G0-7po" firstAttribute="top" secondItem="28r-6u-3i7" secondAttribute="bottom" constant="20" id="yJI-9o-nco"/>
@@ -111,7 +121,9 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addUpdateButton" destination="emj-G0-7po" id="HB5-ur-sR6"/>
                         <outlet property="catImageView" destination="Zz3-x4-ALd" id="3DQ-Cq-6kr"/>
+                        <outlet property="deleteButton" destination="ayO-Gp-ak2" id="EWk-hb-FkF"/>
                         <outlet property="titleTextField" destination="28r-6u-3i7" id="rva-pl-RxZ"/>
                     </connections>
                 </viewController>
