@@ -13,6 +13,8 @@
 		1930E8651E9A728400346427 /* NekoPictureCollector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1930E8631E9A728400346427 /* NekoPictureCollector.xcdatamodeld */; };
 		1930E8671E9A728400346427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1930E8661E9A728400346427 /* Assets.xcassets */; };
 		1930E86A1E9A728400346427 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1930E8681E9A728400346427 /* LaunchScreen.storyboard */; };
+		1930E8721E9AFC4900346427 /* neko.png in Resources */ = {isa = PBXBuildFile; fileRef = 1930E8711E9AFC4900346427 /* neko.png */; };
+		1930E8741E9AFD1C00346427 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930E8731E9AFD1C00346427 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		1930E8661E9A728400346427 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1930E8691E9A728400346427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1930E86B1E9A728400346427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1930E8711E9AFC4900346427 /* neko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neko.png; sourceTree = "<group>"; };
+		1930E8731E9AFD1C00346427 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +63,9 @@
 				1930E85C1E9A728400346427 /* AppDelegate.swift */,
 				1930E85E1E9A728400346427 /* ViewController.swift */,
 				1930E8601E9A728400346427 /* Main.storyboard */,
+				1930E8731E9AFD1C00346427 /* GameViewController.swift */,
 				1930E8661E9A728400346427 /* Assets.xcassets */,
+				1930E8711E9AFC4900346427 /* neko.png */,
 				1930E8681E9A728400346427 /* LaunchScreen.storyboard */,
 				1930E86B1E9A728400346427 /* Info.plist */,
 				1930E8631E9A728400346427 /* NekoPictureCollector.xcdatamodeld */,
@@ -127,6 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1930E8721E9AFC4900346427 /* neko.png in Resources */,
 				1930E86A1E9A728400346427 /* LaunchScreen.storyboard in Resources */,
 				1930E8671E9A728400346427 /* Assets.xcassets in Resources */,
 				1930E8621E9A728400346427 /* Main.storyboard in Resources */,
@@ -140,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1930E8741E9AFD1C00346427 /* GameViewController.swift in Sources */,
 				1930E85F1E9A728400346427 /* ViewController.swift in Sources */,
 				1930E85D1E9A728400346427 /* AppDelegate.swift in Sources */,
 				1930E8651E9A728400346427 /* NekoPictureCollector.xcdatamodeld in Sources */,

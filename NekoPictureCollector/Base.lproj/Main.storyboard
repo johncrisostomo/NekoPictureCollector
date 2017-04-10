@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="767" y="139"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="3Jj-LG-Q5U">
             <objects>
-                <viewController id="dZJ-28-66U" sceneMemberID="viewController">
+                <viewController id="dZJ-28-66U" customClass="GameViewController" customModule="NekoPictureCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lsK-fF-btC"/>
                         <viewControllerLayoutGuide type="bottom" id="nYF-t8-4rj"/>
@@ -48,14 +48,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zz3-x4-ALd">
-                                <rect key="frame" x="47" y="84" width="281" height="200"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neko.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zz3-x4-ALd">
+                                <rect key="frame" x="36" y="84" width="303" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="pFO-Z7-doX"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="28r-6u-3i7">
-                                <rect key="frame" x="47" y="318" width="281" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="28r-6u-3i7">
+                                <rect key="frame" x="36" y="318" width="303" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -63,15 +63,18 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emj-G0-7po">
                                 <rect key="frame" x="172.5" y="368" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="dZJ-28-66U" eventType="touchUpInside" id="euI-pF-LxZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="28r-6u-3i7" firstAttribute="top" secondItem="Zz3-x4-ALd" secondAttribute="bottom" constant="34" id="3Tw-0W-y11"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Zz3-x4-ALd" secondAttribute="trailing" constant="31" id="RQS-u6-fHE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zz3-x4-ALd" secondAttribute="trailing" constant="20" id="RQS-u6-fHE"/>
                             <constraint firstItem="emj-G0-7po" firstAttribute="centerX" secondItem="SdF-dr-Lhi" secondAttribute="centerX" id="nZb-Mo-2aQ"/>
                             <constraint firstItem="Zz3-x4-ALd" firstAttribute="centerX" secondItem="SdF-dr-Lhi" secondAttribute="centerX" id="pX5-M4-vPx"/>
-                            <constraint firstItem="Zz3-x4-ALd" firstAttribute="leading" secondItem="SdF-dr-Lhi" secondAttribute="leadingMargin" constant="31" id="rI4-UY-jEc"/>
+                            <constraint firstItem="Zz3-x4-ALd" firstAttribute="leading" secondItem="SdF-dr-Lhi" secondAttribute="leadingMargin" constant="20" id="rI4-UY-jEc"/>
                             <constraint firstItem="Zz3-x4-ALd" firstAttribute="top" secondItem="lsK-fF-btC" secondAttribute="bottom" constant="20" id="tmv-44-bVY"/>
                             <constraint firstItem="28r-6u-3i7" firstAttribute="width" secondItem="Zz3-x4-ALd" secondAttribute="width" id="vU7-wv-Pw2"/>
                             <constraint firstItem="emj-G0-7po" firstAttribute="top" secondItem="28r-6u-3i7" secondAttribute="bottom" constant="20" id="yJI-9o-nco"/>
@@ -80,10 +83,22 @@
                     </view>
                     <navigationItem key="navigationItem" id="qAM-yT-arO">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="gLv-qB-caS"/>
-                            <barButtonItem title="Photos" id="st9-9B-Mge"/>
+                            <barButtonItem systemItem="camera" id="gLv-qB-caS">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="dZJ-28-66U" id="gbz-9j-mwP"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Photos" id="st9-9B-Mge">
+                                <connections>
+                                    <action selector="photosTapped:" destination="dZJ-28-66U" id="x57-QQ-xy1"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="gameImageView" destination="Zz3-x4-ALd" id="G4H-I3-GKx"/>
+                        <outlet property="titleTextField" destination="28r-6u-3i7" id="rva-pl-RxZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPI-zM-aNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,4 +123,7 @@
             <point key="canvasLocation" x="6" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="neko.png" width="2396" height="1854"/>
+    </resources>
 </document>
