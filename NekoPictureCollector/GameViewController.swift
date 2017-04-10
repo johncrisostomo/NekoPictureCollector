@@ -9,7 +9,7 @@
 import UIKit
 
 class GameViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    @IBOutlet weak var gameImageView: UIImageView!
+    @IBOutlet weak var catImageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     
     var imagePicker = UIImagePickerController()
@@ -33,12 +33,20 @@ class GameViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
-        gameImageView.image = image
+        catImageView.image = image
         
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addTapped(_ sender: Any) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
+        let cat = Cat(context: context)
+        cat.title = titleTextField.text
+        cat.image = UIImagePNGRepresentation(catImageView.image!)! as NSData
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        navigationController!.popViewController(animated: true)
     }
 }

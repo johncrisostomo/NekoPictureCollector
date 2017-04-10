@@ -14,7 +14,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NekoPictureCollector" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="NekoPictureCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,7 +22,19 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UkB-yO-Wqe">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="UkB-yO-Wqe" secondAttribute="trailing" id="7iO-Cx-Haq"/>
+                            <constraint firstItem="UkB-yO-Wqe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EiH-zv-0UK"/>
+                            <constraint firstItem="UkB-yO-Wqe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ghW-6Z-dBF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UkB-yO-Wqe" secondAttribute="bottom" id="lrf-Is-kM6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eZo-cW-PDH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="crJ-3u-fy3">
@@ -31,6 +43,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="UkB-yO-Wqe" id="vds-Du-MEy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,7 +111,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="gameImageView" destination="Zz3-x4-ALd" id="G4H-I3-GKx"/>
+                        <outlet property="catImageView" destination="Zz3-x4-ALd" id="3DQ-Cq-6kr"/>
                         <outlet property="titleTextField" destination="28r-6u-3i7" id="rva-pl-RxZ"/>
                     </connections>
                 </viewController>
